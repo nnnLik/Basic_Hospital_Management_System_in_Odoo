@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<odoo>
+        <template id="basic_hms.medical_view_report_lab_result_demo_report">
+			<t t-call="web.external_layout">
+				<div class="page">
+					<div class="oe_structure"/>
+						<div class="text-right mb32"> Date: <span t-esc="datetime.date.today()"/></div><br/>
+							<div>
+								<h3 class="text-center">
+									<strong style="background-color: #F2F2F2;">LABORATORY REPORT</strong>
+								</h3>
+							</div>
+							
+						<br/>
+						
+				        <table class="table table-condensed"> 
+	                        <tr> 
+		                        <th style="border: 0px ;" class="text-left">Patient Name: 
+		                            <span style="font-weight:normal;" t-field="doc.patient_id.patient_id.name"/>
+		                        </th> 
+		                        
+		                        <th style="border: 0px ;" class="text-left">Test ID: 
+		                            <span style="font-weight:normal;" t-field="doc.name"/>
+		                        </th>
+
+		                        <th style="border: 0px ;" class="text-left">Age : 
+		                            <span style="font-weight:normal;" t-field="doc.patient_id.age"/>
+		                        </th>
+	                        </tr> 
+
+	                        <tr> 
+		                    	<th style="border: 0px ;" class="text-left">Sex : 
+		                            <span style="font-weight:normal;" t-field="doc.patient_id.sex"/>
+		                        </th>
+
+		                        <th style="border: 0px ;" class="text-left">Doctor: 
+		                            <span style="font-weight:normal;" t-field="doc.requestor_physician_id.partner_id.name"/>
+		                        </th>
+		                        <th style="border: 0px ;">
+		                        </th> 
+	                        </tr> 
+			            </table>
+					<br>
+					<br/>
+					</br>
+					<div class="row">
+						<div class="text-center mb32">
+							<h2>
+								<b><p style="font-size: 20px; color: blue;" t-field="doc.test_id.name"/></b>
+							</h2>
+						</div>
+					</div>
+					<div>
+						<table style="width:100%; border :1px solid;">
+							<thead>
+								<tr style="border-bottom: 1px solid black;">
+									<th style="border-right: 1px solid black;" >Analyte</th>
+									<th style="border-right: 1px solid black;">Result</th>
+									<th style="border-right: 1px solid black;">Normal Range</th>
+									<th style="border-right: 1px solid black;">Units</th>
+								</tr>
+							</thead>
+							<tbody >
+								<t t-foreach="doc.critearea_ids" t-as="test1">
+									<tr style="border-bottom: 1px solid black;">
+										<td style="border-right: 1px solid black;">
+											<span t-field="test1.name"/>
+										</td>
+										<td style="border-right: 1px solid black;">
+											<span t-field="test1.result_text"/>
+										</td>
+										<td style="border-right: 1px solid black;">
+											<span t-field="test1.normal_range"/>
+										</td>
+							
+										<td style="border-right: 1px solid black;">
+											<span t-field="test1.lab_test_unit_id"/>
+										</td>
+									</tr>
+								</t>
+							</tbody>
+						</table>
+					</div>
+					<br>
+						<br>
+							<br/>
+						</br>
+					</br>
+					<div class="row mt32 mb32" id="informations">
+						<div>
+							<strong>Signature:_____________________________</strong>
+						</div>
+					</div>
+					<div class="oe_structure"/>
+				</div>
+			</t>
+        </template>
+        <template id="lab_result_demo">
+			<t t-call="web.html_container">
+				<t t-foreach="docs" t-as="doc">
+					<t t-call="basic_hms.medical_view_report_lab_result_demo_report" t-lang="doc.patient_id.patient_id.lang"/>
+				</t>
+			</t>
+
+        </template>
+</odoo>

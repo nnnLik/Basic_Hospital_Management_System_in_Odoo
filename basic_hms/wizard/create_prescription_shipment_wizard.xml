@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="view_prescription_shipment_wizard_view"
+            model="ir.ui.view">
+            <field name="name">Create Prescription Shipment</field>
+            <field name="model">create.prescription.shipment</field>
+            <field name="arch" type="xml">
+                <form string="Create prescription invoices">
+                    <separator 
+                        string="Do you want to create the prescription Shipment ?" />
+                    <newline />
+                    <separator string="                  "
+                         />
+                     <footer>
+                    <button name="create_prescription_shipment"
+                        class="oe_highlight" string="Create Prescription Shipment"
+                        type="object" />
+                        or
+                    <button special="cancel" string="Cancel" class="oe_highlight" />
+                    </footer>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="action_create_prescription_shipment1" model="ir.actions.act_window">
+            <field name="name">Create Prescription Shipment</field>
+            <field name="res_model">create.prescription.shipment</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+</odoo>

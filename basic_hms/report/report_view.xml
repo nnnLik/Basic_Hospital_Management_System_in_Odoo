@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="report_print_prescription" model="ir.actions.report">
+            <field name="name">Prescription</field>
+            <field name="model">medical.prescription.order</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.prescription_demo_report</field>
+            <field name="report_file">basic_hms.prescription_demo_report</field>
+            <field name="binding_model_id" ref="model_medical_prescription_order"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="report_print_appointment" model="ir.actions.report">
+            <field name="name">Appointment Recipts New</field>
+            <field name="model">medical.appointment</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.appointment_recipts_report</field>
+            <field name="report_file">basic_hms.appointment_recipts_report</field>
+            <field name="binding_model_id" ref="model_medical_appointment"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="report_print_patient_card" model="ir.actions.report">
+            <field name="name">Patient Card</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.report_patient_card</field>
+            <field name="report_file">basic_hms.report_patient_card</field>
+            <field name="binding_model_id" ref="model_medical_patient"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="report_print_patient_medications_document" model="ir.actions.report">
+            <field name="name">Medication History New</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.patient_medications_document</field>
+            <field name="report_file">basic_hms.patient_medications_document</field>
+            <field name="binding_model_id" ref="model_medical_patient"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="report_print_patient_vaccinations_document" model="ir.actions.report">
+            <field name="name">Vaccinations History New</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.patient_vaccinations</field>
+            <field name="report_file">basic_hms.patient_vaccinations</field>
+            <field name="binding_model_id" ref="model_medical_patient"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="report_print_patient_diseases_document" model="ir.actions.report">
+            <field name="name">Diseases Report New</field>
+            <field name="model">medical.patient</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.patient_diseases_document</field>
+            <field name="report_file">basic_hms.patient_diseases_document</field>
+            <field name="binding_model_id" ref="model_medical_patient"/>
+            <field name="binding_type">report</field>
+        </record>
+
+        <record id="report_print_lab_result_demo" model="ir.actions.report">
+            <field name="name">Lab Record</field>
+            <field name="model">medical.lab</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">basic_hms.lab_result_demo</field>
+            <field name="report_file">basic_hms.lab_result_demo</field>
+            <field name="binding_model_id" ref="model_medical_lab"/>
+            <field name="binding_type">report</field>
+        </record>
+    </data>
+</openerp>
